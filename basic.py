@@ -104,8 +104,11 @@ class Cube:
             glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, None)
 
             glfw.swap_buffers(window)
-
         glfw.terminate()
+
+
+
+
 
     def getFileContents(self, filename):
         p = os.path.join(os.getcwd(), "shaders", filename)
