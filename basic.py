@@ -7,7 +7,6 @@ import pyrr
 
 def main():
 
-    # initialize glfw
     if not glfw.init():
         return
 
