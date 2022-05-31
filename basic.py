@@ -32,7 +32,7 @@ def main():
     texture_offset = len(obj.vertex_index)*12
 
 
-    shader = ShaderLoader.compile_shader("shaders/video_17_vert.vs", "shaders/video_17_frag.fs")
+    shader = ShaderLoader.compile_shader("shaders/triangle.vertex.shader", "shaders/triangle.fragment.shader")
 
     VBO = glGenBuffers(1)
     glBindBuffer(GL_ARRAY_BUFFER, VBO)
