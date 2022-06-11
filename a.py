@@ -30,11 +30,16 @@ class App:
         glUniform1i(glGetUniformLocation(self.shader, "imageTexture"), 0)
         glEnable(GL_DEPTH_TEST)
 
-        self.wood_texture = Material("boardtexture.jpg")
-        self.cube_mesh = Mesh("chessbord/chess.obj")
+        self.wood_texture = Material("d.jpg")
+        self.cube_mesh = Mesh("new22.obj")
+
+        self.new_mesh = Mesh("whitepices/whitewall.obj")
+        
+        # self.new_mesh = Mesh("whitepices/whitewall.obj")
 
         self.cube = Cube(
-            position = [0,-0.5,-3],
+            
+            position = [0,-0.7,-3],
             eulers = [0,0,0]
         )
 
@@ -85,12 +90,12 @@ class App:
                 roll:rotation around z axis
                 yaw: rotation around y axis
             """
-            model_transform = pyrr.matrix44.multiply(
-                m1=model_transform, 
-                m2=pyrr.matrix44.create_from_eulers(
-                    eulers=np.radians(self.cube.eulers), dtype=np.float32
-                )
-            )
+            # model_transform = pyrr.matrix44.multiply(
+            #     m1=model_transform, 
+            #     m2=pyrr.matrix44.create_from_eulers(
+            #         eulers=np.radians(self.cube.eulers), dtype=np.float32
+            #     )
+            # )
             model_transform = pyrr.matrix44.multiply(
                 m1=model_transform, 
                 m2=pyrr.matrix44.create_from_translation(
@@ -98,11 +103,14 @@ class App:
                 )
             )
             glUniformMatrix4fv(self.modelMatrixLocation,1,GL_FALSE,model_transform)
-            self.wood_texture.use()
             glBindVertexArray(self.cube_mesh.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.cube_mesh.vertex_count)
 
-            pg.display.flip()
+            # glBindVertexArray(self.new_mesh.vao)
+            # glDrawArrays(GL_TRIANGLES, 0, self.new_mesh.vertex_count)
+
+            pg.display.flip()            # self.wood_texture.use()
+
 
             #timing
             self.clock.tick(60)
