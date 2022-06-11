@@ -1,3 +1,4 @@
+
 import pygame as pg
 from OpenGL.GL import *
 from OpenGL.GL.shaders import compileProgram,compileShader
@@ -242,4 +243,7 @@ class Material:
     def destroy(self):
         glDeleteTextures(1, (self.texture,))
 
-myApp = App()
+if __name__ == '__main__':
+    App()
+
+
