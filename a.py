@@ -44,10 +44,10 @@ class App:
         glUseProgram(self.shader)
         glUniform1i(glGetUniformLocation(self.shader, "imageTexture"), 0)
         glEnable(GL_DEPTH_TEST)
-        self.wood_texture = Material("d.jpg")
-        self.cube_mesh = Mesh("finalbord.obj")
+        self.wood_texture = Material("textures/d.jpg")
+        self.cube_mesh = Mesh("models/finalbord.obj")
 
-        self.one = Material("black.jpg")
+        self.one = Material("textures/black.jpg")
 
         
         self.solider_1_right = Mesh("whitepices/finalsoliderrightup1.obj")
