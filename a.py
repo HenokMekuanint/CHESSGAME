@@ -48,7 +48,8 @@ class App:
         self.cube_mesh = Mesh("models/finalbord.obj")
 
         self.one = Material("textures/black.jpg")
-
+        self.two = Material("textures/white.jpg")
+        #the below are the whitepices
         
         self.solider_1_right = Mesh("whitepices/finalsoliderrightup1.obj")
         self.solider_2_right = Mesh("whitepices/finalsoliderrightup2.obj")
@@ -58,18 +59,38 @@ class App:
         self.solider_6_right = Mesh("whitepices/finalsoliderrightup6.obj")
         self.solider_7_right = Mesh("whitepices/finalsoliderrightup7.obj")
         self.solider_8_right = Mesh("whitepices/finalsoliderrightup8.obj")
-
         self.final_wall_right_far = Mesh("whitepices/finalwall.obj")
-        self.final_diagonal_right_far = Mesh("whitepices/finaldiagonal.obj")
-        self.final_horse_right_far = Mesh("whitepices/finalhorse.obj")
+        self.final_diagonal_right_far = Mesh("whitepices/finaldiagonalfar.obj")
+        self.final_horse_right_far = Mesh("whitepices/finalhorsefar.obj")
         self.final_queen_right_far = Mesh("whitepices/finalqueenrrightup8.obj")
         self.final_king_right_far = Mesh("whitepices/finalking.obj")
-
         self.finalhorsenear = Mesh("whitepices/finalhorsenear.obj")
-        self.final_wall_near = Mesh("whitepices/finallwallnear.obj")
+        self.final_wall_near = Mesh("whitepices/finalwallnear.obj")
         self.final_diagonal_near = Mesh("whitepices/finaldiagonalnear.obj")
 
 
+        #the below are the left elements
+
+        self.solider_8_left = Mesh("blackpices/finalsoliiderleft1.obj")
+        self.solider_7_left = Mesh("blackpices/finalsoliiderleft2.obj")
+        self.solider_5_left = Mesh("blackpices/finalsoliiderleft3.obj")
+        self.solider_4_left = Mesh("blackpices/finalsoliiderleft4.obj")
+        self.solider_3_left = Mesh("blackpices/finalsoliiderleft5.obj")
+        self.solider_6_left = Mesh("blackpices/finalsoliiderleft6.obj")
+        self.solider_2_left = Mesh("blackpices/finalsoliiderleft7.obj")
+        self.solider_1_left = Mesh("blackpices/finalsoliiderleft8.obj")
+
+        self.final_wall_left_near = Mesh("blackpices/finalwallfar.obj")
+        self.final_wall_far_left = Mesh("blackpices/finalwallnear.obj")
+
+        self.final_diagonal_left_near = Mesh("blackpices/finaldiagonalfar.obj")
+        self.final_diagonal_far_left = Mesh("blackpices/finaldiagonalnear.obj")
+
+        self.final_horse_left_near = Mesh("blackpices/finalhorsefar.obj")
+        self.finalhorsenear_left = Mesh("blackpices/finalhorsenear.obj")
+
+        self.final_queen_left = Mesh("blackpices/finalqueennear.obj")
+        self.final_king_left = Mesh("blackpices/finalkingnear.obj")
         self.cube = Cube(
             
             position = [-1.5,0,-20],
@@ -156,75 +177,130 @@ class App:
             glUniformMatrix4fv(self.modelMatrixLocation,1,GL_FALSE,model_transform)
             glBindVertexArray(self.cube_mesh.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.cube_mesh.vertex_count)
-            # self.one.use()
+            self.one.use()
 
             #the below are the white pices
 
             glBindVertexArray(self.solider_1_right.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            self.one.use()
 
             glBindVertexArray(self.solider_2_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.solider_2_right.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.solider_3_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.solider_3_right.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.solider_4_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.solider_4_right.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.solider_5_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.solider_5_right.vertex_count)
+            self.one.use()
 
-            glBindVertexArray(self.solider_5_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
+
             # self.one.use()
 
             glBindVertexArray(self.solider_6_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.solider_6_right.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.solider_7_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.solider_7_right.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.solider_8_right.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.solider_8_right.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.final_wall_right_far.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.final_wall_right_far.vertex_count)
-            # self.one.use()
+            self.one.use()
 
             glBindVertexArray(self.final_diagonal_right_far.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.final_diagonal_right_far.vertex_count)
-            # self.one.use()
+            self.one.use()
 
             glBindVertexArray(self.final_queen_right_far.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.final_queen_right_far.vertex_count)
-            # self.one.use()
+            self.one.use()
            
             glBindVertexArray(self.final_king_right_far.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.final_king_right_far.vertex_count)
-            # self.one.use()
+            self.one.use()
 
             glBindVertexArray(self.final_horse_right_far.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.final_horse_right_far.vertex_count)
-            # self.one.use()
+            self.one.use()
            
             glBindVertexArray(self.finalhorsenear.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.final_horse_right_far.vertex_count)
-            # self.one.use()
+            glDrawArrays(GL_TRIANGLES, 0, self.finalhorsenear.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.final_diagonal_near.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.final_horse_right_far.vertex_count)
+            glDrawArrays(GL_TRIANGLES, 0, self.final_diagonal_near.vertex_count)
+            self.one.use()
 
             glBindVertexArray(self.final_wall_near.vao)
-            glDrawArrays(GL_TRIANGLES, 0, self.final_horse_right_far.vertex_count)
+            glDrawArrays(GL_TRIANGLES, 0,self.final_wall_near.vertex_count)
+            self.one.use()
+
+            #the left side of pices are below
+            self.two.use()
+            glBindVertexArray(self.solider_1_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_1_left.vertex_count)
+
+            glBindVertexArray(self.solider_2_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_2_left.vertex_count)
+
+            glBindVertexArray(self.solider_3_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_3_left.vertex_count)
+
+            glBindVertexArray(self.solider_4_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_4_left.vertex_count)
+
+            glBindVertexArray(self.solider_5_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_5_left.vertex_count)
+
+            glBindVertexArray(self.solider_6_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_6_left.vertex_count)
+
+
+            glBindVertexArray(self.solider_7_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_7_left.vertex_count)
+
+            glBindVertexArray(self.solider_8_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,self.solider_8_left.vertex_count)
+
+            glBindVertexArray( self.final_wall_left_near.vao)
+            glDrawArrays(GL_TRIANGLES, 0, self.final_wall_left_near.vertex_count)
+
+            glBindVertexArray( self.final_wall_far_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0, self.final_wall_far_left.vertex_count)
+
+            glBindVertexArray( self.final_diagonal_left_near.vao)
+            glDrawArrays(GL_TRIANGLES, 0, self.final_diagonal_left_near.vertex_count)
+
+            glBindVertexArray(self.final_diagonal_far_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0, self.final_diagonal_far_left.vertex_count)
+
+            
+            glBindVertexArray(self.final_horse_left_near.vao)
+            glDrawArrays(GL_TRIANGLES, 0, self.final_horse_left_near.vertex_count)
+            
+            glBindVertexArray(self.finalhorsenear_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0, self.finalhorsenear_left.vertex_count)
+
+            
+            glBindVertexArray(self.final_queen_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0, self.final_queen_left.vertex_count)
+
+           
+            glBindVertexArray( self.final_king_left.vao)
+            glDrawArrays(GL_TRIANGLES, 0,  self.final_king_left.vertex_count)
             self.wood_texture.use()
 
             ct = pg.time.get_ticks() / 1000
