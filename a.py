@@ -144,30 +144,21 @@ class App:
 
             rot_y = pyrr.Matrix44.from_y_rotation(0.8 * ct)
 
-            # model = pyrr.matrix44.multiply(rot_y, cube_pos)
 
-
-            #refresh screen
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
             glUseProgram(self.shader)
 
             model_transform = pyrr.matrix44.create_identity(dtype=np.float32)
             model_transform = pyrr.matrix44.create_from_translation([0, 0, -11])
 
-            # model_transform = pyrr.matrix44.multiply(
-            #     m1=model_transform, 
-            #     m2=pyrr.matrix44.create_from_translation(
-                    
-            #     )
-            # )
-
+            #the below is the chess boared
 
             glUniformMatrix4fv(self.modelMatrixLocation,1,GL_FALSE,model_transform)
             glBindVertexArray(self.cube_mesh.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.cube_mesh.vertex_count)
             # self.one.use()
 
-
+            #the below are the white pices
 
             glBindVertexArray(self.solider_1_right.vao)
             glDrawArrays(GL_TRIANGLES, 0, self.solider_1_right.vertex_count)
