@@ -49,6 +49,7 @@ class App:
 
         self.one = Material("textures/black.jpg")
         self.two = Material("textures/white.jpg")
+        self.table_Texure=Material("table/woodred.jpg")
         #the below are the whitepices
         
         self.solider_1_right = Mesh("whitepices/finalsoliderrightup1.obj")
@@ -91,6 +92,10 @@ class App:
 
         self.final_queen_left = Mesh("blackpices/finalqueennear.obj")
         self.final_king_left = Mesh("blackpices/finalkingnear.obj")
+
+
+        #the below is the table
+        self.table=Mesh("table/untitled.obj")
         self.cube = Cube(
             
             position = [-1.5,0,-20],
@@ -301,6 +306,10 @@ class App:
            
             glBindVertexArray( self.final_king_left.vao)
             glDrawArrays(GL_TRIANGLES, 0,  self.final_king_left.vertex_count)
+
+            self.table_Texure.use()
+            glBindVertexArray( self.table.vao)
+            glDrawArrays(GL_TRIANGLES, 0,  self.table.vertex_count)
             self.wood_texture.use()
 
             ct = pg.time.get_ticks() / 1000

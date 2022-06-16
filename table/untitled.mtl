@@ -1,0 +1,23 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl alumain
+Ns 98.039212
+Ka 1.000000 1.000000 1.000000
+Kd 0.565171 0.565171 0.565171
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl woodred_woodred.jpg
+Ns 50.980381
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.049779 0.049779 0.049779
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Henok\\Desktop\\wooden_table_office_sh3d\\woodred.jpg
